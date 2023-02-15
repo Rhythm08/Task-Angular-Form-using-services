@@ -1,0 +1,61 @@
+<div class="com">
+    <form class="needs-validation" [formGroup]="StudentForm" >
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltip01">First name</label>
+                <input type="text" class="form-control" name="first" id="validationTooltip01" placeholder="First name" value="Mark"
+                    formControlName="first">
+
+                <span *ngIf="first && first.invalid && first.touched" style="color:red">Provide valid First Name</span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltip02">Last name</label>
+                <input type="text" class="form-control" name="last" id="validationTooltip02" placeholder="Last name" value="Otto"
+                    formControlName="last">
+
+
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltipUsername">User Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="Email"
+                        aria-describedby="validationTooltipUsernamePrepend" formControlName="email">
+                <span *ngIf="email && email.invalid && email.touched" style="color:red">Provide valid Email Address</span>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip03" >City</label>
+                <input type="text" class="form-control" name="city" id="validationTooltip03" placeholder="City"
+                    formControlName="city" style="width: 385px;">
+                <span *ngIf="city && city.invalid && city.touched" style="color:red">Enter City</span>
+
+
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationTooltip04">State</label>
+                <input type="text" class="form-control" name="state" id="validationTooltip04" placeholder="State"
+                    formControlName="state">
+                <span *ngIf="state && state.invalid && state.touched" style="color:red">Enter State</span>
+
+
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationTooltip05">Zip</label>
+                <input type="text" class="form-control" name="zip" id="validationTooltip05" placeholder="Zip"
+                    formControlName="zip">
+                <span *ngIf="zip && zip.invalid && zip.touched" style="color:red">Enter Zip Code</span>
+                
+
+
+            </div>
+        </div>
+        <button [disabled]="StudentForm.invalid" class="btn btn-primary" type="submit" (click)="updateInfo()">Submit form</button>
+    </form>
+</div>

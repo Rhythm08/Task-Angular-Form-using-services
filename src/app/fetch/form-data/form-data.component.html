@@ -1,0 +1,31 @@
+<br>
+<button (click)="sol()" class="btn btn-outline-success">Store Data</button>
+<span>------------------------------</span>
+<button (click)="sub()" class="btn btn-outline-warning">Show Data</button>
+
+<table class="table" *ngIf="showTable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">city</th>
+        <th scope="col">state</th>
+        <th scope="col">zip</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor = "let item of this.arr; let i = index" >
+        <th scope="row">{{i+1}}</th>
+        <td >{{item.first}}</td>
+        <td>{{item.last}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.zip}}</td>
+        <button (click)="delete(i)">delete</button>
+
+      </tr>
+    </tbody>
+  </table>
